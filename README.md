@@ -1,39 +1,57 @@
-##  Employee ID Directory Using Threaded Binary Search Tree
+# Employee-ID-Directory-using-Threaded-Binary-Search-Tree
 
-The Employee ID Directory Using Threaded Binary Search Tree (TBT) is a C++ project designed to manage employee identification numbers efficiently. The project uses a Threaded Binary Search Tree data structure to store employee IDs in sorted order and perform operations such as insertion, searching, and traversal.
+## Problem Statement
+To design and implement a C++ based Employee ID Directory System using a Double Threaded Binary Search Tree. The system stores unique employee IDs in sorted order and allows traversal without recursion or a stack by using threads.
 
-In a traditional binary search tree, some child pointers remain NULL when a node has no left or right child. In a threaded binary search tree, these pointers are used to store links to the node’s inorder predecessor or successor. This approach allows efficient inorder traversal without requiring recursion or an auxiliary stack.
+## Objective
+To implement a Threaded Binary Search Tree for managing employee IDs and performing insertion, traversal, and predecessor/successor searching efficiently.
 
-The program provides a menu-driven interface that allows users to insert employee IDs, display IDs in ascending order, find the inorder predecessor and successor of a particular employee ID, and display the preorder traversal of the tree. It also prevents duplicate employee IDs from being inserted.
+## Data Structure Used
+- Binary Search Tree
+- Double Threaded Binary Tree (threads on both left and right sides)
 
-### Objectives
+## Operations
+1. Insert Employee ID
+2. Inorder Traversal
+3. Find Predecessor and Successor
+4. Preorder Traversal
+5. Exit
 
-- To implement a threaded binary search tree using C++.
-- To maintain employee IDs in sorted order.
-- To enable efficient inorder traversal using threaded pointers.
-- To find the predecessor and successor of a given employee ID.
-- To demonstrate insertion, searching, and preorder traversal in a tree data structure.
-- To prevent duplicate entries and provide a simple, interactive menu.
+## Concepts Used
+- C++
+- Binary Search Tree
+- Threaded Binary Tree
+- Structures
+- Pointers
+- Dynamic Memory Allocation
+- Inorder Predecessor and Successor
+- Tree Traversals (Inorder and Preorder)
 
-### Key Features
+## Algorithm
+1. Start the program.
+2. Create an empty threaded binary search tree.
+3. Insert a new employee ID at its correct position in the tree. If the ID already exists, display "Duplicate Employee ID!".
+4. While inserting, set the new node's left and right threads to its inorder predecessor and successor, and update the parent's thread flag to a real child link.
+5. Perform inorder traversal by starting at the leftmost node and repeatedly moving to the inorder successor using threads.
+6. To find the predecessor and successor, search for the given employee ID and then use the threads or the rightmost/leftmost node of the subtree.
+7. Perform preorder traversal by visiting the node and then following the left and right child links (not threads).
+8. Repeat the operations until the user selects Exit.
+9. Stop the program.
 
-1. Insert Employee ID: Adds a new employee ID while maintaining the binary search tree structure and threading.
-2. Inorder Traversal: Displays all employee IDs in ascending order by following successor threads.
-3. Find Predecessor and Successor: Identifies the employee ID immediately before and after a specified ID in sorted order.
-4. Preorder Traversal: Displays the tree nodes in root-left-right order.
-5. Duplicate ID Detection: Prevents the insertion of an employee ID that already exists.
-6. Menu-Driven Interface: Allows users to perform multiple operations until they choose to exit.
+## Advantages
+- Inorder traversal is done without recursion or an explicit stack.
+- NULL pointers are reused as threads, so space is utilized efficiently.
+- Predecessor and successor can be found quickly.
+- Employee IDs are always kept in sorted order.
+- Duplicate employee IDs are not allowed.
+- Memory is allocated dynamically as new IDs are added.
 
-### Technologies Used
+## How to Run
+```
+g++ main.cpp -o directory
+./directory
+```
+Sample run: see `output.txt`.
 
-- Programming Language: C++
-- Data Structure: Threaded Binary Search Tree
-- Concepts: Pointers, structures, dynamic memory allocation, searching, insertion, and tree traversal.
-
-### Applications
-
-This project demonstrates how threaded binary search trees can be used in employee directories, sorted record management systems, and other applications that require ordered data retrieval and traversal.
-
-### Conclusion
-
-The Employee ID Directory project provides a practical demonstration of threaded binary search trees in C++. It helps users understand how threaded pointers improve inorder traversal and how predecessor and successor operations can be performed efficiently. The project strengthens understanding of non-linear data structures, pointer manipulation, and dynamic memory management.
+## Conclusion
+The Employee ID Directory using a Double Threaded Binary Search Tree demonstrates how threads can make tree traversal faster and simpler in C++. It performs essential operations such as inserting employee IDs, inorder and preorder traversals, and finding the predecessor and successor of an ID. This project helps in understanding binary search trees, threaded binary trees, pointers, and dynamic memory allocation.
